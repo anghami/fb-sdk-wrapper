@@ -13,7 +13,6 @@
     "promise"
   ],
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "npm run clean && babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
     "clean": "rm -rf lib",
