@@ -9,10 +9,13 @@ export default function initFactory(FB) {
    * @param {Object} params - Params object
    */
   return function init(params = {}) {
-    params = Object.assign({}, params, {
-      xfbml: false,
-      version: 'v7.0',
-    });
+    params = Object.assign(
+      {
+        xfbml: false,
+        version: 'v7.0',
+      },
+      params
+    );
     FB.init(params);
   };
 }

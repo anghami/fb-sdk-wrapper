@@ -6,9 +6,12 @@
  * @return {Promise} for the global window.FB object
  */
 export default function load(params = {}) {
-  params = Object.assign({}, params, {
-    locale: 'en_US',
-  });
+  params = Object.assign(
+    {
+      locale: 'en_US',
+    },
+    params
+  );
   return new Promise((resolve, reject) => {
     if (window.FB) {
       return resolve(window.FB);
