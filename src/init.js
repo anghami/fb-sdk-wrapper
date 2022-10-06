@@ -1,5 +1,3 @@
-import { defaults } from 'lodash';
-
 export default function initFactory(FB) {
   /**
    * Used to initialize and setup the SDK. All other SDK methods must be called
@@ -11,7 +9,7 @@ export default function initFactory(FB) {
    * @param {Object} params - Params object
    */
   return function init(params = {}) {
-    params = defaults({}, params, {
+    params = Object.assign({}, params, {
       xfbml: false,
       version: 'v7.0',
     });

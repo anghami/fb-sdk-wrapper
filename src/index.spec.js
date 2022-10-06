@@ -1,11 +1,10 @@
-import { last } from 'lodash';
 import * as Facebook from './index';
 
 describe('FB SDK wrapper', () => {
   beforeEach(() => {
     global.window.FB = {
       api: jest.fn((...rest) => {
-        last(rest)('response!');
+        rest[rest.length - 1]('response!');
       }),
       getLoginStatus: jest.fn((callback) => {
         callback('response!');

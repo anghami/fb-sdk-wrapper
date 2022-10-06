@@ -1,4 +1,3 @@
-import { noop } from 'lodash';
 import sdkProvider from './sdkProvider';
 
 describe('provider for the SDK', () => {
@@ -7,7 +6,7 @@ describe('provider for the SDK', () => {
 
   beforeEach(() => {
     global.window.FB = 'FB';
-    factory = jest.fn(() => noop);
+    factory = jest.fn(() => () => undefined);
 
     method = sdkProvider(factory);
   });

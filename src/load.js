@@ -1,5 +1,3 @@
-import { defaults } from 'lodash';
-
 /**
  * Injects the script for the FB JS SDK into the page.
  *
@@ -8,7 +6,7 @@ import { defaults } from 'lodash';
  * @return {Promise} for the global window.FB object
  */
 export default function load(params = {}) {
-  params = defaults({}, params, {
+  params = Object.assign({}, params, {
     locale: 'en_US',
   });
   return new Promise((resolve, reject) => {
